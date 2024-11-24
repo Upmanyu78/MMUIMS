@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Loginstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <img src="mmdu_logo.png" alt="MMDU Logo">
+            <h1>MMDU</h1>
+            <h2>Information Multicast System</h2>
+        </div>
+        <div class="right-panel">
+            <div class="form-container">
+                <div class="toggle-buttons">
+                    <button class="toggle-btn1" id="loginBtn">Log in</button>
+                    <button class="toggle-btn2" id="signupBtn">Sign up</button>
+                </div>
+                <form id="loginForm" method="POST">
+                    <h3>Enter your details</h3>
+                    <select name="role" id="role" required>
+                        <option value="" disabled selected>Select role</option>
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <input type="text" name="roll" id="roll" placeholder="Enter Roll No." required>
+                    <input type="password" name="password" id="password" placeholder="Enter Password" required>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form data
+    const role = document.getElementById('role').value;
+    const roll = document.getElementById('roll').value;
+    const password = document.getElementById('password').value;
+
+    // Simulated user data (Replace with server-side validation in production)
+    const users = {
+        admin: { roll: "admin", password: "admin123", dashboard: "admindashboard.html" },
+        faculty: { roll: "faculty", password: "faculty123", dashboard: "FacultyDashboard.html" },
+        student: { roll: "11212821", password: "1234", dashboard: "Dashboard.html" }
+    };
+
+    // Validate credentials
+    if (
+        users[role] &&
+        users[role].roll === roll &&
+        users[role].password === password
+    ) {
+        // Store user role in localStorage for session management
+        localStorage.setItem('role', role);
+        localStorage.setItem('roll', roll);
+
+        // Redirect to the respective dashboard
+        window.location.href = users[role].dashboard;
+    } else {
+        // Display an error message
+        document.getElementById('errorMessage').innerText = "Invalid credentials or role!";
+    }
+});
+
+// Handle Signup Button
+document.getElementById("signupBtn").addEventListener("click", function () {
+    window.location.href = "Signup.html"; // Redirect to signup page
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admindashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="mmdu_logo.png" alt="University Logo">
+                <h2>IMS Admin Panel</h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#" onclick="setActive(this, 'Dashboard')"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#" onclick="setActive(this, 'Faculty')"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                    <li><a href="#" onclick="setActive(this, 'Students')"><i class="fas fa-user-graduate"></i> Students</a></li>
+                    <li><a href="#" onclick="setActive(this, 'Events')"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="#" onclick="setActive(this, 'Alerts')"><i class="fas fa-bell"></i> Alerts</a></li>
+                    <li><a href="#" onclick="setActive(this, 'Logout')"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        
+        <main class="main-content">
+            <header>
+                <h1>Welcome Admin</h1>
+            </header>
+            <div id="content">
+                <p>Select a menu item to see details.</p>
+                <img src="hello.png">a
+            </div>
+        </main>
+    </div>
+    <script src="admindashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.dashboard {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #f8d7da;
+    width: 250px;
+    padding: 0px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.sidebar .logo img {
+    width: 200px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.logo h2 {
+    color: #010000;
+    font-size: 25px;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    padding: 0;
+    
+}
+
+/* Default styles for menu items */
+.sidebar .menu ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 10px 20px;
+    transition: background 0.3s, color 0.3s;
+    border-left: 4px solid transparent; /* No border by default */
+}
+
+/* Hover effect */
+.sidebar .menu ul li a:hover {
+    background-color: #c67070;
+    color: white;
+    border-left: 4px solid #000000;
+}
+
+/* Active button styling */
+.sidebar .menu ul li a.active {
+    background-color: #a03a3a; /* Darker red for active state */
+    color: white; /* White text for active state */
+    border-left: 8px solid #000000; /* Light pink left border for active state */
+}
+
+.sidebar .menu ul li:last-child a {
+    border-left: 4px solid transparent;
+    text-align: left;
+    background: none; /* Neutral background for logout */
+}
+
+.sidebar .menu ul li:last-child a:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-left: 4px solid #000000;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.main-content header h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#content {
+    font-size: 18px;
+}
